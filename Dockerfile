@@ -8,4 +8,5 @@ RUN cd /src && ./build.sh "$(cat VERSION)"
 ONBUILD COPY ./build.sh /src/build.sh
 ONBUILD COPY ./modules.go /src/modules.go
 ONBUILD RUN cd /src && ./build.sh "$(cat VERSION)-custom"
-ENTRYPOINT /src/entrypoint.sh
+COPY entrypoint.sh /usr/local/bin/
+ENTRYPOINT ["entrypoint.sh"]

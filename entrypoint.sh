@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 
-sleep 2
+sleep 10
 exec /bin/logspout "$@"
